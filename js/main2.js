@@ -48,15 +48,15 @@ async function geojsonFetch() {
                     'step',
                     ['get', 'rates'],
                     '#ffffb2', // stop_output_0
-                    44.917, // stop_input_0
+                    45, // stop_input_0
                     '#fed976', // stop_output_1
-                    58.836, // stop_input_1
+                    59, // stop_input_1
                     '#feb24c', // stop_output_2
-                    70.543, // stop_input_2
+                    71, // stop_input_2
                     '#fd8d3c', // stop_output_3
-                    85.432, // stop_input_3
+                    86, // stop_input_3
                     '#f03b20', // stop_output_4
-                    291.297, // stop_input_4
+                    291, // stop_input_4
                     '#bd0026'
                 ],
                 'fill-outline-color': '#444343',
