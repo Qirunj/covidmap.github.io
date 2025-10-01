@@ -14,12 +14,12 @@ async function geojsonFetch() {
     let stateData = await response.json();
 
     const layers = [
-        '4.492-44.916',
-        '44.917-58.835',
-        '58.936-70.542',
-        '70.543-85.431',
-        '85.432-291.297',
-        '291.297 and more'
+        '<45',
+        '45-58',
+        '59-70',
+        '71-85',
+        '86-291',
+        '≥291'
     ];
 
     const colors = [
@@ -66,7 +66,7 @@ async function geojsonFetch() {
     });
 
     const legend = document.getElementById('legend');
-    legend.innerHTML = "<b>COVID-19 Rates</b>(cases/1000 residents)<br><br>";
+    legend.innerHTML = "<b>COVID-19 Case</b>(cases/1000 residents)<br><br>";
 
     layers.forEach((layer, i) => {
         const color = colors[i];
@@ -82,13 +82,13 @@ async function geojsonFetch() {
         legend.appendChild(item);
     });
 
-    map.on('mousemove', ({point}) => {
+    map.on('mousemove', ({ point }) => {
         const state = map.queryRenderedFeatures(point, {
             layers: ['stateData-layer']
         });
         document.getElementById('text-description').innerHTML = state.length ?
-            `<h3>${state[0].properties.county}</h3><p><strong><em>${state[0].properties.rates}</strong> percent per thousand residents</em></p>` :
-            `<p>Hover over a state!</p>`;
+            `<h3>${state[0].properties.county}</h3><p><strong><em>${state[0].properties.rates}</strong> cases per thousand residents</em></p>` :
+            `<p>Hover over a county!</p>`;
     });
 
 }
